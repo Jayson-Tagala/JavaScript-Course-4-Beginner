@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numbers and Strings</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <script>
+      // LESSON 1: Numbers and Math
+
+      // #Problem 1
+      /* At a restaurant, you order 1 soup for 10, 3 burgers for 8, and 1 ice cream for 5. Use JavaScript to calculate the cost of the order */
+      const soup = 10;
+      const burger = 8 * 3;
+      const iceCream = 5;
+
+      let total = soup + iceCream + burger;
+      console.log("Problem 1: " + total);
+      // Output: 39
+
+      // #Problem 2
+      /* You're at a restaurant with 2 friends (3 people in total) and make the same order as Problem 1. Calculate how much each person pays. */
+      let finalTotal = total / 3;
+      console.log("Problem 2: " + finalTotal);
+      // Output: 13
+
+      // #Problem 3
+      /* Calculate the total cost of a toaster (18.50) and 2 shirts (7.50). */
+      const toaster = 18.5;
+      const shirt = 7.5 * 2;
+
+      let total1 = toaster + shirt;
+      console.log("Problem 3: " + total1);
+      // Output: 33.5
+
+      // #Problem 4
+      /* Calculate a 10% tax for the total in Problem 3. */
+      let total2 = total1 * 0.1;
+      console.log("Problem 4: " + total2);
+
+      // # Problem 5
+      /* Setup: in the Amazon project, go to the home page and add a toaster ($18.99) to your cart so you have 1 basketball,
+1 t-shirt, and 1 toaster. Choose $4.99 shipping for the toaster. */
+
+      // 1a. Convert the currency to PHP peso.
+      const usdToPhpRate = 60;
+      const cartToaster = 18.99;
+      const cartBall = 12.5;
+      const cartShirt = 5;
+      const shippingF = 4.99;
+
+      // Convert USD to PHP and round to two decimal places
+      const convertToPHP = (amount) =>
+        parseFloat((amount * usdToPhpRate).toFixed(2));
+
+      // Converted Toaster Price to PHP
+      const convertedToaster = convertToPHP(cartToaster);
+      console.log("Converted Price of Toaster is: " + convertedToaster);
+
+      // Converted Basketball Price to PHP
+      const cartBallP = convertToPHP(cartBall);
+      console.log("Converted Price of Basketball is: " + cartBallP);
+
+      // Converted Shirt Price to PHP
+      const cartShirtP = convertToPHP(cartShirt);
+      console.log("Converted Price of T-shirt is: " + cartShirtP);
+
+      // Converted Shipping fee to PHP
+      const roundedShipping = convertToPHP(shippingF);
+      console.log("Converted Shipping Fee is: " + roundedShipping);
+
+      // 1b. Calculate the cost of the products (before shipping and taxes).
+      // Hint: Calculate in cents to avoid inaccuracies.
+      const productCost = convertedToaster + cartBallP + cartShirtP;
+      console.log("Calculated product cost is: " + productCost);
+
+      // 1c. Calculate the total before tax
+      const totalBeforeTax = productCost + roundedShipping;
+      console.log("Total is: " + totalBeforeTax);
+
+      // 1d. Calculate the 10% tax exactly. Hint: use Math.round()
+      const roundedTax = Math.round(totalBeforeTax * 0.1);
+      console.log("Tax: " + roundedTax);
+
+      // 1d. Calculate Order total at the bottom.
+      const orderTotal = totalBeforeTax + roundedTax;
+      console.log("Order total is: " + orderTotal);
+
+      // #-# CHALLENGE EXERCISES #-#
+      // We'll use JavaScript to convert temperatures from Celsius to Fahrenheit. The formula is
+      // fahrenheit = (celsius * 9/5) + 32
+      // celsius = (fahrenheit - 32) *5/9
+
+      // 2a. The temperature is 25C. Calculate the temperature in Fahrenheit. (77)
+      let tempInF = (25 * 9) / 5 + 32;
+      console.log("The temperature in Fahrenheit is: " + tempInF);
+      // 2b. The temperature is 86F. Calcuate the temperature in Celsius. (30)
+      let tempInC = ((86 - 32) * 5) / 9;
+      console.log("The temperature in Celsius is: " + tempInC);
+      // 2c. The temperature is -5C. Calculate the temperature in Fahrenheit. (23);
+      let newTempF = (-5 * 9) / 5 + 32;
+      console.log("The new temperature in Fahrenheit is: " + newTempF);
+
+      console.log(
+        "#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#"
+      );
+      // LESSON 2: String
+      // # Concatenation, Interpolation, Multi-line Strings
+
+      // var str1 = "Hello";
+      // var str2 = "World";
+      // var result = str1.concat(" ", str2);
+      // console.log(result);
+      //
+      // var name = "John";
+      // var surname = "Doe";
+      // var result1 = `${name} ${surname}`;
+      // console.log(result1);
+
+      // 3a. Create a text 'My name is:' as a string.
+      console.log("My name is: ");
+      // 3b. Add your name to the end of the previous result using concatenation
+      var myName = "Jayson";
+      // 3c. Using concatenation, add the 2 strings from 3a and 3b together to create the text: 'My name is:'___'
+      // (replace __ with your name).
+      var str1 = "My name is:";
+      var str2 = myName;
+
+      var name = str1.concat(" ", str2);
+      console.log(name);
+      // 3d. At a restaurant, you order 1 coffee ($5) and 1 bagel ($3). Using math, calculate the total cost,
+      // and using concatenation, crate the text: 'Total cost: $__' (replace __ with the total you calculated).
+      var coffee = 5;
+      var bagel = 3;
+
+      totalCost = coffee + bagel;
+      var resultText = `Total cost: $` + totalCost;
+      console.log(resultText);
+
+      // 3e. Do the same thing as 3d, but use a template string and interpolation.
+      var totalCostInterp = `Total cost: $${coffee + bagel}`;
+      console.log(totalCostInterp);
+
+      // 3f. Display the text from 3e in a popup using alert(...);
+      //var popAlert = totalCostInterp;
+      //console.log(alert(popAlert));
+    </script>
+  </body>
+</html>

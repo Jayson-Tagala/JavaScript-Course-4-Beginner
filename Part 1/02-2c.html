@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booleans and If-Statements</title>
+  </head>
+  <body>
+    <!--
+    <button
+      onclick="
+     const randomNumber = Math.random();
+
+    let result = '';
+
+    if (randomNumber < 0.5) {
+    result = 'head';
+    } else {
+    result = 'tail';
+    }
+
+     let guess = '';
+
+     if(result === 'head'){
+        guess = 'You win!'
+     }
+     else{
+        guess = 'You lose!'
+     }
+     console.log(`The result is ${result}.` + `Your guess is Head. ${guess}`  )
+    "
+    >
+      Head
+    </button>
+    <button
+      onclick="
+    const randomNumber1 = Math.random();
+    let result1 = '';
+    if (randomNumber1 < 0.5) {
+    result1 = 'head';
+    } else {
+    result1 = 'tail';
+    }
+    let guess1 = '';
+     if(result1 === 'tail'){
+    guess1 = 'You win!'
+    }
+    else{
+     guess1 = 'You lose!'
+    }
+    console.log(`The result is ${result1}.` + `Your guess is Tail. ${guess1}`  )
+    "
+    >
+      Tail
+    </button>
+    -->
+    <button
+      onclick="
+    const randomNumber = Math.random();
+    /* if (randomNumber < 0.5) {
+    result = 'head';
+    } else {
+    result = 'tail';
+    }
+    */
+    const result = (randomNumber < 0.5) ? 'head' : 'tail'
+
+        
+         const guess = (result === 'head') ? 'You win!' : 'You lose!' 
+         console.log(`The result is ${result}.` + `Your guess is Head. ${guess}`  )
+    /*
+
+     if(result === 'head'){
+        guess = 'You win!'
+     }
+     else{
+        guess = 'You lose!'
+     }
+     console.log(`The result is ${result}.` + `Your guess is Head. ${guess}`  )
+    */
+     "
+    >
+      Head
+    </button>
+    <button
+      onclick="
+    const randomNumber1 = Math.random();
+    /*let result1 = '';
+    if (randomNumber1 < 0.5) {
+    result1 = 'head';
+    } else {
+    result1 = 'tail';
+    }
+    */
+    const result1 = (randomNumber1 < 0.5) ? 'head' : 'tail'
+   /* let guess1 = '';
+     if(result1 === 'tail'){
+    guess1 = 'You win!'
+    }
+    else{
+     guess1 = 'You lose!'
+    }
+    */
+    const guess1 = (result1 === 'tail') ? 'You win!' : 'You lose!'
+    console.log(`The result is ${result1}.` + `Your guess is Tail. ${guess1}`  )
+    "
+    >
+      Tail
+    </button>
+    <script>
+      /*
+      const randomNumber = Math.random();
+      let result = "";
+      let guess = "";
+      if (randomNumber < 0.5) {
+        result = "head";
+      } else {
+        result = "tail";
+      }
+      console.log(result);
+      */
+    </script>
+  </body>
+</html>
